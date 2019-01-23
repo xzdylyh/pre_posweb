@@ -1,0 +1,17 @@
+1533867389786	geckodriver	INFO	geckodriver 0.20.1
+1533867389795	geckodriver	INFO	Listening on 127.0.0.1:36102
+1533867392883	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-profile" "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\rust_mozprofile.uC9ssefwBHNG"
+1533867395700	Marionette	INFO	Listening on port 36114
+1533867396069	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://wlassets.oss-cn-beijing.aliyuncs.com/pos/js/require.min.js, line 89: Error: Script error for "posprint"
+http://requirejs.org/docs/errors.html#scripterror
+[CJavahild 21300, Chrome_ChildSTchrerad] WARNIipt error: https://wlassets.oss-Ncn-beiG: pjing.aliyuncs.com/pos/js/require.min.js, ipeline 89: Er error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 21300, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+ror: Script error for "LodopFuncs"
+http://requirejs.org/docs/errors.html#scripterror
+[Parent 20780, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 20516, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 20516, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_chan*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+

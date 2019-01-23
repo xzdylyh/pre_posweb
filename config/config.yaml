@@ -1,0 +1,85 @@
+﻿NAME: 配置信息
+
+BASE_URL:
+    POS_URL: https://pos.acewill.net
+
+#元素高亮显示配置
+HightLight: 1
+#1:高亮显示
+#其它:忽略高亮
+
+
+CONFIG:
+    Cookies: #cook信息
+        LoginCookies: {"pos_entry_number":"1802326514043775",
+               "pos_entry_actualcard":"1802326514043775",
+               "pos_bid":"1075315154",
+               "pos_mid":"1180940478",
+               "pos_sid":"1905736354",
+               "pos_sign":"6ce861056005381bfddcef92e14fd8c0"
+               }
+
+        BossLoginCookies: {"name":"UserSession","value":"5b5ae93a272d7"} #boss,浏览器关闭session过期
+
+    #浏览器 <Chrome 或 Firefox>
+    Browser:  Chrome
+
+
+#发送测试报告,邮件配置
+EMAIL:
+    Smtp_Server: smtp.exmail.qq.com
+    Smtp_Sender: lengyaohui.bj@acewill.cn
+    Password: YHleng870120
+    Msg_Title: 线上软Pos-UI自动化测试结果
+    Receivers: ['lengyaohui@163.com']  #收件人
+    #Receivers: ['lengyaohui@163.com','yechangchun.bj@acewill.cn','wangchaoying.bj@acewill.cn','lilong.bj@acewill.cn','wangyan.bj@acewill.cn','cch@acewill.cn','gzx@acewill.cn','huxl@acewill.cn','jtt@acewill.cn','maming@acewill.cn'] #收件人
+    From: 自动化测试系统
+    To: 微生活测试组
+
+
+RUNING: #case执行配置
+    REPLAY: #元素回放配置
+        Time: 900 #回放时间为毫秒
+
+    DESCPTION: N不执行，Y执行
+    CONSUME: #消费模块
+        Flag: {"testCase1":{"Flag":"Y","desc":"实体卡开卡"},
+               "testCase2":{"Flag":"Y","desc":"积分消费"},
+               "testCase3":{"Flag":"Y","desc":"储值消费"},
+               "testCase4":{"Flag":"Y","desc":"券消费"},
+               "testCase5":{"Flag":"N","desc":"实体卡绑卡"},
+               "testCase6":{"Flag":"Y","desc":"次卡开卡"}}
+
+    CHARGE: #储值模块
+        Flag: {"testCase1":{"Flag":"Y","desc":"储值"},
+               "testCase2":{"Flag":"Y","desc":"储值并补开发票"}}
+
+    CREDIT: #积分换礼模块
+        Flag: {"testCase1":{"Flag":"Y","desc":"积分换礼"}}
+
+    PRINT: #班结小票
+        Flag: {"testCase1":{"Flag":"Y","desc":"班结小票打印"}}
+
+    CONSUMELIST: #交易流水-消费
+        Flag: {"testCase1":{"Flag":"Y","desc":"撤销消费"}}
+
+    CREDITLIST: #交易流水-积分
+        Flag: {"testCase1":{"Flag":"Y","desc":"撤销积分"}}
+
+    CHARGELIST:  #充值流水
+        Flag: {"testCase1":{"Flag":"Y","desc":"撤销充值"}}
+
+    CARDINDEX: #储值卡售卖
+        Flag: {"testCase1":{"Flag":"Y","desc":"储值卡-实体卡售卖"}}
+
+    COUPONSALEINDEX: #商品售卖
+        Flag: {"testCase1":{"Flag":"Y","desc":"商品售卖-次卡+券_直接购买"}}
+
+    NUMBERCARD: #次卡消费
+        Flag: {"testCase1":{"Flag":"Y","desc":"次卡消费正常流程"}}
+
+    NUMBERCARDLIST: #交易流水-次卡消费
+        Flag: {"testCase1":{"Flag":"Y","desc":"次卡消费撤销正常流程"}}
+
+    CONSUMECOUPONLIST: #交易流水-商品售卖
+        Flag: {"testCase1":{"Flag":"Y","desc":"交易流水-商品售卖撤销正常流程"}}
