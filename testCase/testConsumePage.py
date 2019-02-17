@@ -1,21 +1,22 @@
 #coding=utf-8
-from pos.pages.consumePage import ConsumePage
+from selenium import webdriver
+from pages.consumePage import ConsumePage
 import unittest,ddt,os
-from pos.lib.excel import Excel
-from pos.lib.scripts import (
+from lib.excel import Excel
+from lib.scripts import (
     getRunFlag,
     getYamlfield,
     select_Browser_WebDriver,
     replayCaseFail,
-    getBaseUrl
+    join_url
 )
-from pos.lib import gl,HTMLTESTRunnerCN
+from lib import gl,HTMLTESTRunnerCN
 import time,json
 
 consumeData = [
     {
-        "phoneOrCard":"1802326514043775",
-        "desc":u"积分消费",
+        "phoneOrCard":"1213058035164514",
+        "desc": "积分消费",
         "tcTotalFee":1,
         "tcStoredPay":1,
         "credit":1,
@@ -25,8 +26,8 @@ consumeData = [
 chargeDealData=[
     {
         "tcTotalFee":1,
-        "desc":u"储值卡消费",
-        "phoneOrCard":"1802326514043775",
+        "desc": "实体卡消费",
+        "phoneOrCard":"1213058035164514",
         "dualCode":"000000"
     }
 ]
@@ -34,14 +35,14 @@ custCouponData = [
     {
         "tcTotalFee":1,
         "desc":u"券消费",
-        "phoneOrCard":"1802326514043775",
+        "phoneOrCard":"1213058035164514",
         "dualCode":'000000'
     }
 ]
 cardData = [
     {
         "PhoneNo":"13712345676",
-        "desc":u"实体卡开卡",
+        "desc": "实体卡开卡",
         'username':'yhleng',
         'birthday':'1985-03-21',
         'password':'000000'
@@ -50,12 +51,13 @@ cardData = [
 cardBindData = [
     {
         "PhoneNo": "13712345678",
-        "desc":u"绑卡正常流程"
+        "desc": "绑卡正常流程"
     }
 ]
+
 cardofData = [
     {
-        "desc":u"次卡开卡"
+        "desc": "不记名卡开卡"
     }
 ]
 
@@ -66,13 +68,15 @@ class TestConsumePage(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.driver = select_Browser_WebDriver()
-        cls.url = str(getBaseUrl('POS_URL')) +r'/consume'
-        cls.excel = Excel(os.path.join(gl.dataPath, 'posCardData.xls').decode('utf-8'))
-        cls.toexcel = Excel(os.path.join(gl.dataPath, 'posNotNameCardData.xls').decode('utf-8'))
+        cls.url = join_url('/consume')
+        #实体卡-未开过卡的
+        cls.excel = Excel(os.path.join(gl.dataPath, 'posCardData.xls'))
+        #不记名卡-未开过卡的
+        cls.toexcel = Excel(os.path.join(gl.dataPath, 'posNotNameCardData.xls'))
 
     def consume_func(self,data):
         '''消费->输入卡号或手机号->确定'''
-        self.consume = ConsumePage(self.url, self.driver, r'消费 - 微生活POS系统')
+        self.consume = ConsumePage(self.url, self.driver, '消费 - 微生活POS系统')
 
         # 打开浏览器，并转到消费页
         self.consume.open
@@ -139,11 +143,11 @@ class TestConsumePage(unittest.TestCase):
     @replayCaseFail(num=3)
     def testCase1(self,data):
         '''实体卡开卡'''
-        print '功能：{0}'.format(data['desc'])
+        print('功能：{0}'.format(data['desc']))
 
         #获取卡号
         cardNo = {'phoneOrCard':str(self.excel.getCardNo())}
-        print u"实体卡，卡号为：{0}".format(cardNo['phoneOrCard'])
+        print("实体卡，卡号为：{0}".format(cardNo['phoneOrCard']))
 
         #进入消费页面
         self.consume_func(cardNo)
@@ -172,7 +176,7 @@ class TestConsumePage(unittest.TestCase):
     @replayCaseFail(num=3)
     def testCase6(self,data):
         """不记名卡开卡"""
-        print '功能：{0}'.format(data['desc'])
+        print('功能：{0}'.format(data['desc']))
 
         # 获取磁道号
         cardNo = {'phoneOrCard':str(self.toexcel.getCardNo(cell_col=0))}
@@ -192,7 +196,7 @@ class TestConsumePage(unittest.TestCase):
     @replayCaseFail(num=3)
     def testCase5(self,data):
         """实体卡绑卡"""
-        print '功能：{0}'.format(data['desc'])
+        print('功能：{0}'.format(data['desc']))
 
         # 获取卡号-字典类型
         cardNo = {'phoneOrCard': str(self.excel.getCardNo())}
@@ -209,7 +213,7 @@ class TestConsumePage(unittest.TestCase):
         #获取验证码
         code = self.getCode(data)  #获取验证码
         #输出验证码
-        print '验证码:{0}'.format(code)
+        print('验证码:{0}'.format(code))
         #输入验证码
         self.consume.inputVerCode(code)
         #单击 验证码框 确定
@@ -225,7 +229,7 @@ class TestConsumePage(unittest.TestCase):
     @replayCaseFail(num=3)
     def testCase2(self,data):
         '''积分消费'''
-        print u'功能:{0},消费{1}元,抵扣{2}积分.'.format(data['desc'],data['tcTotalFee'],data['credit'])
+        print('功能:{0},消费{1}元,抵扣{2}积分.'.format(data['desc'],data['tcTotalFee'],data['credit']))
 
         # 进入消费页
         self.consume_func(data)
@@ -259,11 +263,11 @@ class TestConsumePage(unittest.TestCase):
     @replayCaseFail(num=3)
     def testCase3(self,data):
         '''储值销费'''
-        print u'功能:{0},消费金额{1},储值抵扣{2}元.'.format(
+        print('功能:{0},消费金额{1},储值抵扣{2}元.'.format(
             data['desc'],
             data['tcTotalFee'],
             data['tcTotalFee']
-        )
+        ))
         # 进入消费页
         self.consume_func(data)
         # 输入金额
@@ -290,10 +294,10 @@ class TestConsumePage(unittest.TestCase):
     @replayCaseFail(num=3)
     def testCase4(self,data):
         '''券消费'''
-        print u'功能:{0},消费{1}积分.'.format(
+        print('功能:{0},消费{1}积分.'.format(
             data['desc'],
             data['tcTotalFee']
-        )
+        ))
         # 进入消费页
         self.consume_func(data)
         # 输入金额
@@ -319,7 +323,7 @@ class TestConsumePage(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         cls.driver.quit()
-
+        # pass
 
 
 if __name__=="__main__":
@@ -328,9 +332,9 @@ if __name__=="__main__":
     tests = [unittest.TestLoader().loadTestsFromTestCase(TestConsumePage)]
     suite.addTests(tests)
     filePath = os.path.join(gl.reportPath, 'Report.html')  # 确定生成报告的路径
-    print filePath
+    print(filePath)
 
-    with file(filePath, 'wb') as fp:
+    with open(filePath, 'wb') as fp:
         runner = HTMLTESTRunnerCN.HTMLTestRunner(
             stream=fp,
             title=u'UI自动化测试报告',

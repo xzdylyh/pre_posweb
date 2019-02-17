@@ -1,6 +1,6 @@
 #_*_coding:utf-8_*_
 import os,time
-import reportLog
+from lib import reportLog
 global libPath
 global reportPath #报告路径
 global casePath
@@ -27,9 +27,9 @@ configFile = os.path.join(configPath,'config.yaml')
 
 
 if __name__=="__main__":
-    print "lib路径:%s"%libPath
-    print "report路径:%s"%reportPath
-    print 'testCase路径:{0}'.format(casePath)
-    print 'report/images路径:{0}'.format(imgPath)
-    print 'config路径:{0}'.format(configPath)
-    print 'data路径:{0}'.format(dataPath)
+    print("lib路径:%s"%libPath)
+    print("report路径:%s"%reportPath)
+    print('testCase路径:{0}'.format(casePath))
+    print('report/images路径:{0}'.format(imgPath))
+    print('config路径:{0}'.format(configPath))
+    print('data路径:{0}'.format(dataPath))

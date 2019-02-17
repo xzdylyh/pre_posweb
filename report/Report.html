@@ -117,9 +117,9 @@ function html_escape(s) {
 <div class='heading'>
 <h4 style="font-family: Microsoft YaHei">UI自动化测试报告</h4>
 <p class='attribute'><strong>测试人员 : </strong> yhleng</p>
-<p class='attribute'><strong>开始时间 : </strong> 2018-09-27 11:41:24</p>
-<p class='attribute'><strong>合计耗时 : </strong> 0:04:39.193000</p>
-<p class='attribute'><strong>测试结果 : </strong> 共 17，通过 17，通过率= 100.00%</p>
+<p class='attribute'><strong>开始时间 : </strong> 2019-02-17 10:40:16</p>
+<p class='attribute'><strong>合计耗时 : </strong> 0:05:06.995777</p>
+<p class='attribute'><strong>测试结果 : </strong> 共 19，通过 19，通过率= 100.00%</p>
 
 <p class='description'>详细测试用例结果</p>
 </div>
@@ -129,8 +129,8 @@ function html_escape(s) {
 <a class="btn btn-primary" href='javascript:showCase(0)'>概要{ 100.00% }</a>
 <a class="btn btn-warning" href='javascript:showCase(4)'>错误{ 0 }</a>
 <a class="btn btn-danger" href='javascript:showCase(1)'>失败{ 0 }</a>
-<a class="btn btn-success" href='javascript:showCase(2)'>通过{ 17 }</a>
-<a class="btn btn-info" href='javascript:showCase(3)'>所有{ 17 }</a>
+<a class="btn btn-success" href='javascript:showCase(2)'>通过{ 19 }</a>
+<a class="btn btn-info" href='javascript:showCase(3)'>所有{ 19 }</a>
 </p>
 <table id='result_table' class="table table-condensed table-bordered table-hover">
 <colgroup>
@@ -153,7 +153,7 @@ function html_escape(s) {
 </tr>
 
 <tr class='passClass warning'>
-    <td>pos.testCase.testConsumePage.TestConsumePage: 消费模块</td>
+    <td>testCase.testConsumePage.TestConsumePage: 消费模块</td>
     <td class="text-center">5</td>
     <td class="text-center">5</td>
     <td class="text-center">0</td>
@@ -163,7 +163,7 @@ function html_escape(s) {
 </tr>
 
 <tr id='pt1_1' class='hiddenRow'>
-    <td class='passCase' width='300px'><div class='testcase'>testCase1_1</div></td>
+    <td class='passCase' width='300px'><div class='testcase'>testCase1_1: 实体卡开卡</div></td>
     <td colspan='5' align='left' width='600px'> <!--print 输出框位置-->
     <!--默认收起错误信息 -Findyou
     <button id='btn_pt1_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_1'>通过</button>
@@ -174,10 +174,10 @@ function html_escape(s) {
     <pre style="overflow-y:scroll; overflow-x:hidden;height:200px; width:600px; margin:auto; border:1px solid #e1e1e1;">
     
 pt1_1: 功能：实体卡开卡
-实体卡，卡号为：1586313594400751
-screenshot: 20180927_11.41.31 .png
-screenshot: 20180927_11.41.32 .png
-Input输入卡号或手机号:1586313594400751
+实体卡，卡号为：1136918672875267
+screenshot: 20190217_10.40.23 .png
+screenshot: 20190217_10.40.24 .png
+Input输入卡号或手机号:1136918672875267
 Click:确定('xpath', "//div[@id='ipt_box1']/div[1]/div[1]/button")
 Click:开卡图标('xpath', '//*[@id="openCard"]/div/div/div[2]/a[1]/i')
 Input手机号:13712345676
@@ -186,15 +186,15 @@ Click:性别('xpath', '/html/body/div[1]/div/div/div/div[2]/form/div[4]/div/labe
 Input生日:1985-03-21
 Input:000000
 Click:确定('xpath', '/html/body/div[1]/div/div/div/div[3]/div/button')
-screenshot: 20180927_11.41.42 .png
+screenshot: 20190217_10.40.34 .png
 
 
     </pre>
     </div>
     </td>
     <td align="right">
-        <a  href="./images/20180927_11.41.42.png">
-            <img   src="./images/20180927_11.41.42.png" height="200px" width="400px"/>
+        <a  href="./images/20190217_10.40.34.png">
+            <img   src="./images/20190217_10.40.34.png" height="200px" width="400px"/>
         </a>
     </td>
 </tr>
@@ -202,7 +202,7 @@ screenshot: 20180927_11.41.42 .png
 
 
 <tr id='pt1_2' class='hiddenRow'>
-    <td class='passCase' width='300px'><div class='testcase'>testCase2_1</div></td>
+    <td class='passCase' width='300px'><div class='testcase'>testCase2_1: 积分消费</div></td>
     <td colspan='5' align='left' width='600px'> <!--print 输出框位置-->
     <!--默认收起错误信息 -Findyou
     <button id='btn_pt1_2' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_2'>通过</button>
@@ -213,26 +213,28 @@ screenshot: 20180927_11.41.42 .png
     <pre style="overflow-y:scroll; overflow-x:hidden;height:200px; width:600px; margin:auto; border:1px solid #e1e1e1;">
     
 pt1_2: 功能:积分消费,消费1元,抵扣1积分.
-screenshot: 20180927_11.41.43 .png
-screenshot: 20180927_11.41.44 .png
-Input输入卡号或手机号:1802326514043775
+screenshot: 20190217_10.40.35 .png
+screenshot: 20190217_10.40.35 .png
+Input输入卡号或手机号:1213058035164514
 Click:确定('xpath', "//div[@id='ipt_box1']/div[1]/div[1]/button")
 Input消费总金额:1
+清除清除储值支付金额:('id', 'tcStoredPay')
 Input积分:1
 Input备注:积分消费
 Click:确定('id', 'showSubmit')
 Click:确定('xpath', '/html/body/div[2]/div/div/div[2]/div/div[2]/div/button[1]')
 Input:000000
+screenshot: 20190217_10.40.46 .png
 Click:('xpath', '/html/body/div[2]/div[2]/div/div/div[2]/form/div[3]/div/button[1]')
-screenshot: 20180927_11.41.58 .png
+screenshot: 20190217_10.40.50 .png
 
 
     </pre>
     </div>
     </td>
     <td align="right">
-        <a  href="./images/20180927_11.41.58.png">
-            <img   src="./images/20180927_11.41.58.png" height="200px" width="400px"/>
+        <a  href="./images/20190217_10.40.50.png">
+            <img   src="./images/20190217_10.40.50.png" height="200px" width="400px"/>
         </a>
     </td>
 </tr>
@@ -240,7 +242,7 @@ screenshot: 20180927_11.41.58 .png
 
 
 <tr id='pt1_3' class='hiddenRow'>
-    <td class='passCase' width='300px'><div class='testcase'>testCase3_1</div></td>
+    <td class='passCase' width='300px'><div class='testcase'>testCase3_1: 储值销费</div></td>
     <td colspan='5' align='left' width='600px'> <!--print 输出框位置-->
     <!--默认收起错误信息 -Findyou
     <button id='btn_pt1_3' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_3'>通过</button>
@@ -250,26 +252,26 @@ screenshot: 20180927_11.41.58 .png
     <div id='div_pt1_3' class="collapse in">
     <pre style="overflow-y:scroll; overflow-x:hidden;height:200px; width:600px; margin:auto; border:1px solid #e1e1e1;">
     
-pt1_3: 功能:储值卡消费,消费金额1,储值抵扣1元.
-screenshot: 20180927_11.41.59 .png
-screenshot: 20180927_11.41.59 .png
-Input输入卡号或手机号:1802326514043775
+pt1_3: 功能:实体卡消费,消费金额1,储值抵扣1元.
+screenshot: 20190217_10.40.50 .png
+screenshot: 20190217_10.40.51 .png
+Input输入卡号或手机号:1213058035164514
 Click:确定('xpath', "//div[@id='ipt_box1']/div[1]/div[1]/button")
 Input消费总金额:1
-Input备注:储值卡消费
+Input备注:实体卡消费
 Click:确定('id', 'showSubmit')
 Click:确定('xpath', '/html/body/div[2]/div/div/div[2]/div/div[2]/div/button[1]')
 Input:000000
 Click:('xpath', '/html/body/div[2]/div[2]/div/div/div[2]/form/div[3]/div/button[1]')
-screenshot: 20180927_11.42.10 .png
+screenshot: 20190217_10.41.01 .png
 
 
     </pre>
     </div>
     </td>
     <td align="right">
-        <a  href="./images/20180927_11.42.10.png">
-            <img   src="./images/20180927_11.42.10.png" height="200px" width="400px"/>
+        <a  href="./images/20190217_10.41.01.png">
+            <img   src="./images/20190217_10.41.01.png" height="200px" width="400px"/>
         </a>
     </td>
 </tr>
@@ -277,7 +279,7 @@ screenshot: 20180927_11.42.10 .png
 
 
 <tr id='pt1_4' class='hiddenRow'>
-    <td class='passCase' width='300px'><div class='testcase'>testCase4_1</div></td>
+    <td class='passCase' width='300px'><div class='testcase'>testCase4_1: 券消费</div></td>
     <td colspan='5' align='left' width='600px'> <!--print 输出框位置-->
     <!--默认收起错误信息 -Findyou
     <button id='btn_pt1_4' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_4'>通过</button>
@@ -288,25 +290,26 @@ screenshot: 20180927_11.42.10 .png
     <pre style="overflow-y:scroll; overflow-x:hidden;height:200px; width:600px; margin:auto; border:1px solid #e1e1e1;">
     
 pt1_4: 功能:券消费,消费1积分.
-screenshot: 20180927_11.42.10 .png
-screenshot: 20180927_11.42.11 .png
-Input输入卡号或手机号:1802326514043775
+screenshot: 20190217_10.41.01 .png
+screenshot: 20190217_10.41.02 .png
+Input输入卡号或手机号:1213058035164514
 Click:确定('xpath', "//div[@id='ipt_box1']/div[1]/div[1]/button")
 Input消费总金额:1
 Input备注:券消费
 Click:确定('id', 'showSubmit')
 Click:确定('xpath', '/html/body/div[2]/div/div/div[2]/div/div[2]/div/button[1]')
 Input:000000
+screenshot: 20190217_10.41.12 .png
 Click:('xpath', '/html/body/div[2]/div[2]/div/div/div[2]/form/div[3]/div/button[1]')
-screenshot: 20180927_11.42.21 .png
+screenshot: 20190217_10.41.16 .png
 
 
     </pre>
     </div>
     </td>
     <td align="right">
-        <a  href="./images/20180927_11.42.21.png">
-            <img   src="./images/20180927_11.42.21.png" height="200px" width="400px"/>
+        <a  href="./images/20190217_10.41.16.png">
+            <img   src="./images/20190217_10.41.16.png" height="200px" width="400px"/>
         </a>
     </td>
 </tr>
@@ -314,7 +317,7 @@ screenshot: 20180927_11.42.21 .png
 
 
 <tr id='pt1_5' class='hiddenRow'>
-    <td class='passCase' width='300px'><div class='testcase'>testCase6_1</div></td>
+    <td class='passCase' width='300px'><div class='testcase'>testCase6_1: 不记名卡开卡</div></td>
     <td colspan='5' align='left' width='600px'> <!--print 输出框位置-->
     <!--默认收起错误信息 -Findyou
     <button id='btn_pt1_5' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_5'>通过</button>
@@ -324,21 +327,21 @@ screenshot: 20180927_11.42.21 .png
     <div id='div_pt1_5' class="collapse in">
     <pre style="overflow-y:scroll; overflow-x:hidden;height:200px; width:600px; margin:auto; border:1px solid #e1e1e1;">
     
-pt1_5: 功能：次卡开卡
-screenshot: 20180927_11.42.23 .png
-screenshot: 20180927_11.42.23 .png
-Input输入卡号或手机号:541131381615728705313816157287
+pt1_5: 功能：不记名卡开卡
+screenshot: 20190217_10.41.16 .png
+screenshot: 20190217_10.41.17 .png
+Input输入卡号或手机号:541196100683314497961006833144
 Click:确定('xpath', "//div[@id='ipt_box1']/div[1]/div[1]/button")
 Click:确定('id', 'chargeSubmit')
-screenshot: 20180927_11.42.27 .png
+screenshot: 20190217_10.41.21 .png
 
 
     </pre>
     </div>
     </td>
     <td align="right">
-        <a  href="./images/20180927_11.42.27.png">
-            <img   src="./images/20180927_11.42.27.png" height="200px" width="400px"/>
+        <a  href="./images/20190217_10.41.21.png">
+            <img   src="./images/20190217_10.41.21.png" height="200px" width="400px"/>
         </a>
     </td>
 </tr>
@@ -346,17 +349,17 @@ screenshot: 20180927_11.42.27 .png
 
 
 <tr class='passClass warning'>
-    <td>pos.testCase.testChargePage.TestChargePage: 储值模块</td>
-    <td class="text-center">2</td>
-    <td class="text-center">2</td>
+    <td>testCase.testChargePage.TestChargePage: 储值模块</td>
+    <td class="text-center">3</td>
+    <td class="text-center">3</td>
     <td class="text-center">0</td>
     <td class="text-center">0</td>
-    <td class="text-center"><a href="javascript:showClassDetail('c2',2)" class="detail" id='c2'>详细</a></td>
+    <td class="text-center"><a href="javascript:showClassDetail('c2',3)" class="detail" id='c2'>详细</a></td>
     <td class="text-center">Assert or Error Image</td>
 </tr>
 
 <tr id='pt2_1' class='hiddenRow'>
-    <td class='passCase' width='300px'><div class='testcase'>testCase1_1</div></td>
+    <td class='passCase' width='300px'><div class='testcase'>testCase1_1: 正常储值功能</div></td>
     <td colspan='5' align='left' width='600px'> <!--print 输出框位置-->
     <!--默认收起错误信息 -Findyou
     <button id='btn_pt2_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_1'>通过</button>
@@ -367,30 +370,30 @@ screenshot: 20180927_11.42.27 .png
     <pre style="overflow-y:scroll; overflow-x:hidden;height:200px; width:600px; margin:auto; border:1px solid #e1e1e1;">
     
 pt2_1: 功能:储值正常流程
-screenshot: 20180927_11.42.38 .png
-screenshot: 20180927_11.42.38 .png
-Input储值卡号:1802326514043775
-Click:确定('xpath', '/html/body/div[1]/div/div/div/div[2]/div[1]/div/div/button')
-当前余额:6108.98
-Click:奖励规则('xpath', '/html/body/div[2]/div/div/div/div[2]/div/div[2]/div/div[1]/p[2]')
-Click:自定义规则('xpath', '/html/body/div[2]/div/div/div/div[2]/div/div[2]/div/a')
+screenshot: 20190217_10.41.31 .png
+screenshot: 20190217_10.41.31 .png
+Input储值卡号:1213058035164514
+Click:确定('xpath', '//input[@id="charge_number"]/../div[1]/button[1]')
+当前余额:57.00
+Click:奖励规则('xpath', '//input[@name="tcAwards"]/../div[1]/p[2]')
+Click:自定义规则('link text', '自定义规则')
 Input自定义金额:2
-Click:自定义规则确定('xpath', '/html/body/div[2]/div/div/div/div[2]/div/div[2]/div/div[5]/div[1]/div/div/button')
-Click:现金支付类型('xpath', '/html/body/div[2]/div/div/div/div[2]/div/div[4]/div/div[1]/div/label[1]')
+Click:自定义规则确定('xpath', '//input[@id="present"]/../div[1]/button[1]')
+Clicks:现金支付类型('xpath', '//input[@name="payType"]/..')
 Input备注:自动化测试充值
 Click:确定('id', 'chargeSubmit')
 Click:确定('id', 'chargeCheckBtn')
-screenshot: 20180927_11.42.49 .png
+screenshot: 20190217_10.41.43 .png
 Click:立即消费('id', 'consumeBtn')
-储值后当前余额:6110.98
+储值后当前余额:60.00
 
 
     </pre>
     </div>
     </td>
     <td align="right">
-        <a  href="./images/20180927_11.42.49.png">
-            <img   src="./images/20180927_11.42.49.png" height="200px" width="400px"/>
+        <a  href="./images/20190217_10.41.43.png">
+            <img   src="./images/20190217_10.41.43.png" height="200px" width="400px"/>
         </a>
     </td>
 </tr>
@@ -398,7 +401,7 @@ Click:立即消费('id', 'consumeBtn')
 
 
 <tr id='pt2_2' class='hiddenRow'>
-    <td class='passCase' width='300px'><div class='testcase'>testCase2_1</div></td>
+    <td class='passCase' width='300px'><div class='testcase'>testCase2_1: 储值并补开发票</div></td>
     <td colspan='5' align='left' width='600px'> <!--print 输出框位置-->
     <!--默认收起错误信息 -Findyou
     <button id='btn_pt2_2' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_2'>通过</button>
@@ -409,37 +412,73 @@ Click:立即消费('id', 'consumeBtn')
     <pre style="overflow-y:scroll; overflow-x:hidden;height:200px; width:600px; margin:auto; border:1px solid #e1e1e1;">
     
 pt2_2: 功能:储值并补开发票
-screenshot: 20180927_11.42.52 .png
-screenshot: 20180927_11.42.53 .png
-Input储值卡号:1802326514043775
-Click:确定('xpath', '/html/body/div[1]/div/div/div/div[2]/div[1]/div/div/button')
-当前余额:6110.98
-Click:奖励规则('xpath', '/html/body/div[2]/div/div/div/div[2]/div/div[2]/div/div[1]/p[2]')
-Click:自定义规则('xpath', '/html/body/div[2]/div/div/div/div[2]/div/div[2]/div/a')
+screenshot: 20190217_10.41.45 .png
+screenshot: 20190217_10.41.46 .png
+Input储值卡号:1213058035164514
+Click:确定('xpath', '//input[@id="charge_number"]/../div[1]/button[1]')
+当前余额:60.00
+Click:奖励规则('xpath', '//input[@name="tcAwards"]/../div[1]/p[2]')
+Click:自定义规则('link text', '自定义规则')
 Input自定义金额:2
-Click:自定义规则确定('xpath', '/html/body/div[2]/div/div/div/div[2]/div/div[2]/div/div[5]/div[1]/div/div/button')
-Click:现金支付类型('xpath', '/html/body/div[2]/div/div/div/div[2]/div/div[4]/div/div[1]/div/label[1]')
+Click:自定义规则确定('xpath', '//input[@id="present"]/../div[1]/button[1]')
+Clicks:现金支付类型('xpath', '//input[@name="payType"]/..')
 Input备注:自动化测试充值
 Click:确定('id', 'chargeSubmit')
 Click:确定('id', 'chargeCheckBtn')
-screenshot: 20180927_11.43.04 .png
+screenshot: 20190217_10.41.58 .png
 Click:立即消费('id', 'consumeBtn')
-储值后当前余额:6112.98
+储值后当前余额:63.00
 Click:补开发票('id', 'toReceipt')
-screenshot: 20180927_11.43.09 .png
-Input补开发票金额:2.00
+screenshot: 20190217_10.42.00 .png
+Input补开发票金额:b'2.00'
 Click:确定('xpath', '//*[@id="receipt"]/div[2]/div[4]/div')
 Click:补开发票('id', 'toReceipt')
-screenshot: 20180927_11.43.13 .png
-补开发票金额剩余:0.00
+screenshot: 20190217_10.42.04 .png
+补开发票金额剩余:0.0
 
 
     </pre>
     </div>
     </td>
     <td align="right">
-        <a  href="./images/20180927_11.43.13.png">
-            <img   src="./images/20180927_11.43.13.png" height="200px" width="400px"/>
+        <a  href="./images/20190217_10.42.04.png">
+            <img   src="./images/20190217_10.42.04.png" height="200px" width="400px"/>
+        </a>
+    </td>
+</tr>
+
+
+
+<tr id='pt2_3' class='hiddenRow'>
+    <td class='passCase' width='300px'><div class='testcase'>testCase3_1: 储值功能-自定义金额与储值金额相同</div></td>
+    <td colspan='5' align='left' width='600px'> <!--print 输出框位置-->
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt2_3' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_3'>通过</button>
+    <div id='div_pt2_3' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt2_3' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt2_3'>通过</button>
+    <div id='div_pt2_3' class="collapse in">
+    <pre style="overflow-y:scroll; overflow-x:hidden;height:200px; width:600px; margin:auto; border:1px solid #e1e1e1;">
+    
+pt2_3: 功能:储值(自定义金额与储值规则金额相同)-反向
+screenshot: 20190217_10.42.05 .png
+screenshot: 20190217_10.42.05 .png
+Input储值卡号:1213058035164514
+Click:确定('xpath', '//input[@id="charge_number"]/../div[1]/button[1]')
+当前余额:63.00
+Click:奖励规则('xpath', '//input[@name="tcAwards"]/../div[1]/p[2]')
+Click:自定义规则('link text', '自定义规则')
+Input自定义金额:1
+Click:自定义规则确定('xpath', '//input[@id="present"]/../div[1]/button[1]')
+screenshot: 20190217_10.42.12 .png
+
+
+    </pre>
+    </div>
+    </td>
+    <td align="right">
+        <a  href="./images/20190217_10.42.12.png">
+            <img   src="./images/20190217_10.42.12.png" height="200px" width="400px"/>
         </a>
     </td>
 </tr>
@@ -447,7 +486,7 @@ screenshot: 20180927_11.43.13 .png
 
 
 <tr class='passClass warning'>
-    <td>pos.testCase.testCreditPage.TestCreditPage: 积分兑换模块</td>
+    <td>testCase.testCreditPage.TestCreditPage: 积分兑换模块</td>
     <td class="text-center">1</td>
     <td class="text-center">1</td>
     <td class="text-center">0</td>
@@ -457,7 +496,7 @@ screenshot: 20180927_11.43.13 .png
 </tr>
 
 <tr id='pt3_1' class='hiddenRow'>
-    <td class='passCase' width='300px'><div class='testcase'>testCase1_1</div></td>
+    <td class='passCase' width='300px'><div class='testcase'>testCase1_1: 积分换礼</div></td>
     <td colspan='5' align='left' width='600px'> <!--print 输出框位置-->
     <!--默认收起错误信息 -Findyou
     <button id='btn_pt3_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt3_1'>通过</button>
@@ -468,24 +507,24 @@ screenshot: 20180927_11.43.13 .png
     <pre style="overflow-y:scroll; overflow-x:hidden;height:200px; width:600px; margin:auto; border:1px solid #e1e1e1;">
     
 pt3_1: 正常积分兑换流程
-screenshot: 20180927_11.43.23 .png
-screenshot: 20180927_11.43.24 .png
-Input输入卡号或手机号:1802326514043775
-Click:确定('xpath', '/html/body/div[1]/div/div/div/div[2]/div[1]/div/div/button')
+screenshot: 20190217_10.42.22 .png
+screenshot: 20190217_10.42.23 .png
+Input输入卡号或手机号:1213058662866084
+Click:确定('xpath', '//input[@id="charge_number"]/../div[1]/button[1]')
 勾选:积分规则复选框1
 勾选:积分规则复选框1
 Input积分数量:1
 Input积分详情:自动化测试大礼包1个
 Click:确定('xpath', '//*[@id="creditInfo"]/form/div/div[2]/div/div/a[1]')
-screenshot: 20180927_11.43.32 .png
+screenshot: 20190217_10.42.30 .png
 
 
     </pre>
     </div>
     </td>
     <td align="right">
-        <a  href="./images/20180927_11.43.32.png">
-            <img   src="./images/20180927_11.43.32.png" height="200px" width="400px"/>
+        <a  href="./images/20190217_10.42.30.png">
+            <img   src="./images/20190217_10.42.30.png" height="200px" width="400px"/>
         </a>
     </td>
 </tr>
@@ -493,7 +532,7 @@ screenshot: 20180927_11.43.32 .png
 
 
 <tr class='passClass warning'>
-    <td>pos.testCase.testBjPrintPage.TestBjPrintPage: 班结小票打印</td>
+    <td>testCase.testBjPrintPage.TestBjPrintPage: 班结小票打印</td>
     <td class="text-center">1</td>
     <td class="text-center">1</td>
     <td class="text-center">0</td>
@@ -503,7 +542,7 @@ screenshot: 20180927_11.43.32 .png
 </tr>
 
 <tr id='pt4_1' class='hiddenRow'>
-    <td class='passCase' width='300px'><div class='testcase'>testCase1_1</div></td>
+    <td class='passCase' width='300px'><div class='testcase'>testCase1_1: 班结小结打印</div></td>
     <td colspan='5' align='left' width='600px'> <!--print 输出框位置-->
     <!--默认收起错误信息 -Findyou
     <button id='btn_pt4_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt4_1'>通过</button>
@@ -514,19 +553,19 @@ screenshot: 20180927_11.43.32 .png
     <pre style="overflow-y:scroll; overflow-x:hidden;height:200px; width:600px; margin:auto; border:1px solid #e1e1e1;">
     
 pt4_1: 功能:班结小票打印正常流程
-screenshot: 20180927_11.43.43 .png
-screenshot: 20180927_11.43.43 .png
-Click:班结小票打印('link text', '\xe6\x89\x93\xe5\x8d\xb0\xe7\x8f\xad\xe7\xbb\x93\xe5\xb0\x8f\xe7\xa5\xa8')
-Click:打印('xpath', '/html/body/div[2]/div/div/div[2]/form/div[2]/div/a[1]')
-screenshot: 20180927_11.43.52 .png
+screenshot: 20190217_10.42.41 .png
+screenshot: 20190217_10.42.41 .png
+Click:班结小票打印('partial link text', '打印班结小票')
+Click:打印('link text', '打印')
+screenshot: 20190217_10.42.50 .png
 
 
     </pre>
     </div>
     </td>
     <td align="right">
-        <a  href="./images/20180927_11.43.52.png">
-            <img   src="./images/20180927_11.43.52.png" height="200px" width="400px"/>
+        <a  href="./images/20190217_10.42.50.png">
+            <img   src="./images/20190217_10.42.50.png" height="200px" width="400px"/>
         </a>
     </td>
 </tr>
@@ -534,7 +573,7 @@ screenshot: 20180927_11.43.52 .png
 
 
 <tr class='passClass warning'>
-    <td>pos.testCase.testConsumeListPage.TestConsumeListPage: 交易流水-消费</td>
+    <td>testCase.testConsumeListPage.TestConsumeListPage: 交易流水-消费</td>
     <td class="text-center">1</td>
     <td class="text-center">1</td>
     <td class="text-center">0</td>
@@ -544,7 +583,7 @@ screenshot: 20180927_11.43.52 .png
 </tr>
 
 <tr id='pt5_1' class='hiddenRow'>
-    <td class='passCase' width='300px'><div class='testcase'>testCase1_1</div></td>
+    <td class='passCase' width='300px'><div class='testcase'>testCase1_1: 交易流水-撤销消费</div></td>
     <td colspan='5' align='left' width='600px'> <!--print 输出框位置-->
     <!--默认收起错误信息 -Findyou
     <button id='btn_pt5_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt5_1'>通过</button>
@@ -555,19 +594,19 @@ screenshot: 20180927_11.43.52 .png
     <pre style="overflow-y:scroll; overflow-x:hidden;height:200px; width:600px; margin:auto; border:1px solid #e1e1e1;">
     
 pt5_1: 功能:撤销消费正常流程
-screenshot: 20180927_11.44.02 .png
-screenshot: 20180927_11.44.03 .png
-Click:撤销消费('link text', '\xe6\x92\xa4\xe9\x94\x80\xe6\xb6\x88\xe8\xb4\xb9')
+screenshot: 20190217_10.43.01 .png
+screenshot: 20190217_10.43.02 .png
+Click:撤销消费('link text', '撤销消费')
 Click:确定('id', 'undo')
-screenshot: 20180927_11.44.06 .png
+screenshot: 20190217_10.43.05 .png
 
 
     </pre>
     </div>
     </td>
     <td align="right">
-        <a  href="./images/20180927_11.44.06.png">
-            <img   src="./images/20180927_11.44.06.png" height="200px" width="400px"/>
+        <a  href="./images/20190217_10.43.05.png">
+            <img   src="./images/20190217_10.43.05.png" height="200px" width="400px"/>
         </a>
     </td>
 </tr>
@@ -575,7 +614,7 @@ screenshot: 20180927_11.44.06 .png
 
 
 <tr class='passClass warning'>
-    <td>pos.testCase.testCreditListPage.TestCreditListPage: 交易流水模块-积分换礼</td>
+    <td>testCase.testCreditListPage.TestCreditListPage: 交易流水模块-积分换礼</td>
     <td class="text-center">1</td>
     <td class="text-center">1</td>
     <td class="text-center">0</td>
@@ -585,7 +624,7 @@ screenshot: 20180927_11.44.06 .png
 </tr>
 
 <tr id='pt6_1' class='hiddenRow'>
-    <td class='passCase' width='300px'><div class='testcase'>testCase1_1</div></td>
+    <td class='passCase' width='300px'><div class='testcase'>testCase1_1: 交易流水-撤销积分</div></td>
     <td colspan='5' align='left' width='600px'> <!--print 输出框位置-->
     <!--默认收起错误信息 -Findyou
     <button id='btn_pt6_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt6_1'>通过</button>
@@ -596,19 +635,19 @@ screenshot: 20180927_11.44.06 .png
     <pre style="overflow-y:scroll; overflow-x:hidden;height:200px; width:600px; margin:auto; border:1px solid #e1e1e1;">
     
 pt6_1: 功能:积分换礼-撤销积分
-screenshot: 20180927_11.44.18 .png
-screenshot: 20180927_11.44.19 .png
-Click:撤销积分('link text', '\xe6\x92\xa4\xe9\x94\x80\xe7\xa7\xaf\xe5\x88\x86')
+screenshot: 20190217_10.43.18 .png
+screenshot: 20190217_10.43.19 .png
+Click:撤销积分('link text', '撤销积分')
 Click:确定('id', 'cancelGift')
-screenshot: 20180927_11.44.23 .png
+screenshot: 20190217_10.43.23 .png
 
 
     </pre>
     </div>
     </td>
     <td align="right">
-        <a  href="./images/20180927_11.44.23.png">
-            <img   src="./images/20180927_11.44.23.png" height="200px" width="400px"/>
+        <a  href="./images/20190217_10.43.23.png">
+            <img   src="./images/20190217_10.43.23.png" height="200px" width="400px"/>
         </a>
     </td>
 </tr>
@@ -616,7 +655,7 @@ screenshot: 20180927_11.44.23 .png
 
 
 <tr class='passClass warning'>
-    <td>pos.testCase.testChargeListPage.TestChargeListPage: 交易流水模块-充值</td>
+    <td>testCase.testChargeListPage.TestChargeListPage: 交易流水模块-充值</td>
     <td class="text-center">1</td>
     <td class="text-center">1</td>
     <td class="text-center">0</td>
@@ -626,7 +665,7 @@ screenshot: 20180927_11.44.23 .png
 </tr>
 
 <tr id='pt7_1' class='hiddenRow'>
-    <td class='passCase' width='300px'><div class='testcase'>testCase1_1</div></td>
+    <td class='passCase' width='300px'><div class='testcase'>testCase1_1: 充值撤销</div></td>
     <td colspan='5' align='left' width='600px'> <!--print 输出框位置-->
     <!--默认收起错误信息 -Findyou
     <button id='btn_pt7_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt7_1'>通过</button>
@@ -637,11 +676,11 @@ screenshot: 20180927_11.44.23 .png
     <pre style="overflow-y:scroll; overflow-x:hidden;height:200px; width:600px; margin:auto; border:1px solid #e1e1e1;">
     
 pt7_1: 功能:充值撤销正常流程
-screenshot: 20180927_11.44.33 .png
-screenshot: 20180927_11.44.34 .png
-Click:撤销充值('link text', '\xe6\x92\xa4\xe9\x94\x80\xe5\x85\x85\xe5\x80\xbc')
+screenshot: 20190217_10.43.33 .png
+screenshot: 20190217_10.43.34 .png
+Click:撤销充值('link text', '撤销充值')
 Click:确定('id', 'confirmBtn')
-screenshot: 20180927_11.44.38 .png
+screenshot: 20190217_10.43.38 .png
 充值撤销状态:撤销充值
 
 
@@ -649,8 +688,8 @@ screenshot: 20180927_11.44.38 .png
     </div>
     </td>
     <td align="right">
-        <a  href="./images/20180927_11.44.38.png">
-            <img   src="./images/20180927_11.44.38.png" height="200px" width="400px"/>
+        <a  href="./images/20190217_10.43.38.png">
+            <img   src="./images/20190217_10.43.38.png" height="200px" width="400px"/>
         </a>
     </td>
 </tr>
@@ -658,17 +697,17 @@ screenshot: 20180927_11.44.38 .png
 
 
 <tr class='passClass warning'>
-    <td>pos.testCase.testCardIndexPage.TestCardIndexPage: 储值售卖模块</td>
-    <td class="text-center">1</td>
-    <td class="text-center">1</td>
+    <td>testCase.testCardIndexPage.TestCardIndexPage: 储值售卖模块</td>
+    <td class="text-center">2</td>
+    <td class="text-center">2</td>
     <td class="text-center">0</td>
     <td class="text-center">0</td>
-    <td class="text-center"><a href="javascript:showClassDetail('c8',1)" class="detail" id='c8'>详细</a></td>
+    <td class="text-center"><a href="javascript:showClassDetail('c8',2)" class="detail" id='c8'>详细</a></td>
     <td class="text-center">Assert or Error Image</td>
 </tr>
 
 <tr id='pt8_1' class='hiddenRow'>
-    <td class='passCase' width='300px'><div class='testcase'>testCase1_1</div></td>
+    <td class='passCase' width='300px'><div class='testcase'>testCase1_1: 储值卡售卖-实体储值卡售卖</div></td>
     <td colspan='5' align='left' width='600px'> <!--print 输出框位置-->
     <!--默认收起错误信息 -Findyou
     <button id='btn_pt8_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt8_1'>通过</button>
@@ -678,25 +717,63 @@ screenshot: 20180927_11.44.38 .png
     <div id='div_pt8_1' class="collapse in">
     <pre style="overflow-y:scroll; overflow-x:hidden;height:200px; width:600px; margin:auto; border:1px solid #e1e1e1;">
     
-pt8_1: 功能:实体储值卡售卖
-screenshot: 20180927_11.44.48 .png
-screenshot: 20180927_11.44.49 .png
+pt8_1: 功能:储值卡售卖功能-实体储值卡售卖(支付方式现金)
+screenshot: 20190217_10.43.49 .png
+screenshot: 20190217_10.43.50 .png
 Select:储值卡
 Click:实体卡储值('xpath', '//*[@id="cardChoose"]/label[2]')
-Input储值卡号:3446035920
-Click:确定('xpath', '//*[@id="cardBtn"]')
+Input储值卡号:3639286775
+Clicks:支付类型('xpath', "//input[@name='payType']/..")
+Click:确定('id', 'cardBtn')
 Click:再次确定('xpath', '//*[@id="myModal"]/div/div/div/div/button[1]')
 Click:实体卡储值('xpath', '//*[@id="cardChoose"]/label[2]')
-Input储值卡号:3446035920
-screenshot: 20180927_11.44.58 .png
+Input储值卡号:3639286775
+screenshot: 20190217_10.44.02 .png
 
 
     </pre>
     </div>
     </td>
     <td align="right">
-        <a  href="./images/20180927_11.44.58.png">
-            <img   src="./images/20180927_11.44.58.png" height="200px" width="400px"/>
+        <a  href="./images/20190217_10.44.02.png">
+            <img   src="./images/20190217_10.44.02.png" height="200px" width="400px"/>
+        </a>
+    </td>
+</tr>
+
+
+
+<tr id='pt8_2' class='hiddenRow'>
+    <td class='passCase' width='300px'><div class='testcase'>testCase1_2: 储值卡售卖-实体储值卡售卖</div></td>
+    <td colspan='5' align='left' width='600px'> <!--print 输出框位置-->
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt8_2' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt8_2'>通过</button>
+    <div id='div_pt8_2' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt8_2' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt8_2'>通过</button>
+    <div id='div_pt8_2' class="collapse in">
+    <pre style="overflow-y:scroll; overflow-x:hidden;height:200px; width:600px; margin:auto; border:1px solid #e1e1e1;">
+    
+pt8_2: 功能:储值卡售卖功能-电子卡售卖(支付方式银行卡)
+screenshot: 20190217_10.44.06 .png
+screenshot: 20190217_10.44.06 .png
+Select:储值卡
+Click:实体卡储值('xpath', '//*[@id="cardChoose"]/label[1]')
+清除1:('name', 'cardTotal')
+Input数量:1
+Input微信号:1117093
+Clicks:支付类型('xpath', "//input[@name='payType']/..")
+Click:确定('id', 'cardBtn')
+Click:再次确定('xpath', '//*[@id="myModal"]/div/div/div/div/button[1]')
+screenshot: 20190217_10.44.13 .png
+
+
+    </pre>
+    </div>
+    </td>
+    <td align="right">
+        <a  href="./images/20190217_10.44.13.png">
+            <img   src="./images/20190217_10.44.13.png" height="200px" width="400px"/>
         </a>
     </td>
 </tr>
@@ -704,7 +781,7 @@ screenshot: 20180927_11.44.58 .png
 
 
 <tr class='passClass warning'>
-    <td>pos.testCase.testCouponsaleIndexPage.TestCouponsaleIndexPage: 商品售卖模块</td>
+    <td>testCase.testCouponsaleIndexPage.TestCouponsaleIndexPage: 商品售卖模块</td>
     <td class="text-center">1</td>
     <td class="text-center">1</td>
     <td class="text-center">0</td>
@@ -714,7 +791,7 @@ screenshot: 20180927_11.44.58 .png
 </tr>
 
 <tr id='pt9_1' class='hiddenRow'>
-    <td class='passCase' width='300px'><div class='testcase'>testCase1_1</div></td>
+    <td class='passCase' width='300px'><div class='testcase'>testCase1_1: 商品售卖-券包+次卡+直接购买</div></td>
     <td colspan='5' align='left' width='600px'> <!--print 输出框位置-->
     <!--默认收起错误信息 -Findyou
     <button id='btn_pt9_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt9_1'>通过</button>
@@ -725,23 +802,23 @@ screenshot: 20180927_11.44.58 .png
     <pre style="overflow-y:scroll; overflow-x:hidden;height:200px; width:600px; margin:auto; border:1px solid #e1e1e1;">
     
 pt9_1: 功能:券包+次卡+直接购买
-screenshot: 20180927_11.45.08 .png
-screenshot: 20180927_11.45.09 .png
-Input手机号或卡号:1802326514043775
+screenshot: 20190217_10.44.27 .png
+screenshot: 20190217_10.44.27 .png
+Input手机号或卡号:1213058731956726
 Click:确定('xpath', '/html/body/div[1]/div/div/div/div[2]/div[1]/div/div/button')
 Click:确定('id', 'sell-submit')
 Input:000000
 Click:('xpath', '//*[@id="dialog_paypwd_modal"]/div/div/div[2]/form/div[3]/div/button[1]')
 返回到输入卡号界面?True
-screenshot: 20180927_11.45.14 .png
+screenshot: 20190217_10.44.33 .png
 
 
     </pre>
     </div>
     </td>
     <td align="right">
-        <a  href="./images/20180927_11.45.14.png">
-            <img   src="./images/20180927_11.45.14.png" height="200px" width="400px"/>
+        <a  href="./images/20190217_10.44.33.png">
+            <img   src="./images/20190217_10.44.33.png" height="200px" width="400px"/>
         </a>
     </td>
 </tr>
@@ -749,7 +826,7 @@ screenshot: 20180927_11.45.14 .png
 
 
 <tr class='passClass warning'>
-    <td>pos.testCase.testNumberCardPage.TestNumberCardPage: 次卡消费模块</td>
+    <td>testCase.testNumberCardPage.TestNumberCardPage: 次卡消费模块</td>
     <td class="text-center">1</td>
     <td class="text-center">1</td>
     <td class="text-center">0</td>
@@ -759,7 +836,7 @@ screenshot: 20180927_11.45.14 .png
 </tr>
 
 <tr id='pt10_1' class='hiddenRow'>
-    <td class='passCase' width='300px'><div class='testcase'>testCase1_1</div></td>
+    <td class='passCase' width='300px'><div class='testcase'>testCase1_1: 次卡消费</div></td>
     <td colspan='5' align='left' width='600px'> <!--print 输出框位置-->
     <!--默认收起错误信息 -Findyou
     <button id='btn_pt10_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt10_1'>通过</button>
@@ -770,22 +847,22 @@ screenshot: 20180927_11.45.14 .png
     <pre style="overflow-y:scroll; overflow-x:hidden;height:200px; width:600px; margin:auto; border:1px solid #e1e1e1;">
     
 pt10_1: 功能:次卡消费,正常流程
-screenshot: 20180927_11.45.24 .png
-screenshot: 20180927_11.45.25 .png
-Input手机号或卡号:1586313101756463
+screenshot: 20190217_10.44.43 .png
+screenshot: 20190217_10.44.44 .png
+Input手机号或卡号:1213058035164514
 Click:确定('xpath', '/html/body/div[1]/div/div/div/div[2]/div[1]/div/div/button')
 Input次卡使用数:1
 Click:确定('id', 'numberSubmit')
 断言:返回到次卡消费初始页
-screenshot: 20180927_11.45.29 .png
+screenshot: 20190217_10.44.48 .png
 
 
     </pre>
     </div>
     </td>
     <td align="right">
-        <a  href="./images/20180927_11.45.29.png">
-            <img   src="./images/20180927_11.45.29.png" height="200px" width="400px"/>
+        <a  href="./images/20190217_10.44.48.png">
+            <img   src="./images/20190217_10.44.48.png" height="200px" width="400px"/>
         </a>
     </td>
 </tr>
@@ -793,7 +870,7 @@ screenshot: 20180927_11.45.29 .png
 
 
 <tr class='passClass warning'>
-    <td>pos.testCase.testNumberCardListPage.TestNumberCardListPage: 交易流水模块</td>
+    <td>testCase.testNumberCardListPage.TestNumberCardListPage: 交易流水模块</td>
     <td class="text-center">1</td>
     <td class="text-center">1</td>
     <td class="text-center">0</td>
@@ -803,7 +880,7 @@ screenshot: 20180927_11.45.29 .png
 </tr>
 
 <tr id='pt11_1' class='hiddenRow'>
-    <td class='passCase' width='300px'><div class='testcase'>testCase1_1</div></td>
+    <td class='passCase' width='300px'><div class='testcase'>testCase1_1: 次卡消费撤销</div></td>
     <td colspan='5' align='left' width='600px'> <!--print 输出框位置-->
     <!--默认收起错误信息 -Findyou
     <button id='btn_pt11_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt11_1'>通过</button>
@@ -813,21 +890,21 @@ screenshot: 20180927_11.45.29 .png
     <div id='div_pt11_1' class="collapse in">
     <pre style="overflow-y:scroll; overflow-x:hidden;height:200px; width:600px; margin:auto; border:1px solid #e1e1e1;">
     
-pt11_1: 功能:次卡消费,正常流程
-screenshot: 20180927_11.45.39 .png
-screenshot: 20180927_11.45.40 .png
+pt11_1: 功能:次卡消费撤销正常流程
+screenshot: 20190217_10.44.59 .png
+screenshot: 20190217_10.45.00 .png
 Click:消费撤销('xpath', '//*[@id="giftRunWater"]/table/tbody/tr[1]/td[7]')
 Click:确定('id', 'cancelCost')
 断言:交易流水,新增一条,交易类型为撤销消费的记录
-screenshot: 20180927_11.45.44 .png
+screenshot: 20190217_10.45.03 .png
 
 
     </pre>
     </div>
     </td>
     <td align="right">
-        <a  href="./images/20180927_11.45.44.png">
-            <img   src="./images/20180927_11.45.44.png" height="200px" width="400px"/>
+        <a  href="./images/20190217_10.45.03.png">
+            <img   src="./images/20190217_10.45.03.png" height="200px" width="400px"/>
         </a>
     </td>
 </tr>
@@ -835,7 +912,7 @@ screenshot: 20180927_11.45.44 .png
 
 
 <tr class='passClass warning'>
-    <td>pos.testCase.testConsumeCouponListPage.TestConsumeCouponListPage: 交易流水模块</td>
+    <td>testCase.testConsumeCouponListPage.TestConsumeCouponListPage: 交易流水模块</td>
     <td class="text-center">1</td>
     <td class="text-center">1</td>
     <td class="text-center">0</td>
@@ -845,7 +922,7 @@ screenshot: 20180927_11.45.44 .png
 </tr>
 
 <tr id='pt12_1' class='hiddenRow'>
-    <td class='passCase' width='300px'><div class='testcase'>testCase1_1</div></td>
+    <td class='passCase' width='300px'><div class='testcase'>testCase1_1: 交易流水-撤销商品售卖</div></td>
     <td colspan='5' align='left' width='600px'> <!--print 输出框位置-->
     <!--默认收起错误信息 -Findyou
     <button id='btn_pt12_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt12_1'>通过</button>
@@ -855,21 +932,20 @@ screenshot: 20180927_11.45.44 .png
     <div id='div_pt12_1' class="collapse in">
     <pre style="overflow-y:scroll; overflow-x:hidden;height:200px; width:600px; margin:auto; border:1px solid #e1e1e1;">
     
-pt12_1: 功能:券包+次卡+直接购买
-screenshot: 20180927_11.45.54 .png
-screenshot: 20180927_11.45.55 .png
-Click:商品售卖撤销('link text', '\xe6\x92\xa4\xe9\x94\x80')
+pt12_1: 功能:撤销商品售卖(券包+次卡+直接购买)
+screenshot: 20190217_10.45.14 .png
+screenshot: 20190217_10.45.15 .png
+Click:商品售卖撤销('link text', '撤销')
 Click:确定('id', 'undo')
 断言:交易流水,新增一条,交易类型为撤销商品售卖的记录
-screenshot: 20180927_11.46.00 .png
 
 
     </pre>
     </div>
     </td>
     <td align="right">
-        <a  href="./images/20180927_11.46.00.png">
-            <img   src="./images/20180927_11.46.00.png" height="200px" width="400px"/>
+        <a  href="./images/20190217_10.45.15.png">
+            <img   src="./images/20190217_10.45.15.png" height="200px" width="400px"/>
         </a>
     </td>
 </tr>
@@ -878,8 +954,8 @@ screenshot: 20180927_11.46.00 .png
 
 <tr id='total_row' class="text-center active">
     <td>总计</td>
-    <td>17</td>
-    <td>17</td>
+    <td>19</td>
+    <td>19</td>
     <td>0</td>
     <td>0</td>
     <td>通过率：100.00%</td>

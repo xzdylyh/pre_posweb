@@ -1,23 +1,22 @@
 #coding=utf-8
-from pos.pages.numbercardListPage import NumberCardListPage
+from pages.numbercardListPage import NumberCardListPage
 import unittest,ddt,os
-from pos.lib.scripts import (
-    getYamlfield,
+from lib.scripts import (
     getRunFlag,
     select_Browser_WebDriver,
     replayCaseFail,
-    getBaseUrl
+    join_url
 )
-from pos.lib import gl,HTMLTESTRunnerCN
+from lib import gl,HTMLTESTRunnerCN
 
 
 
 listCardData = [
     {
         "useNum":1,
-        "phoneOrCard":"13712345678",
-        "desc":u"次卡消费,正常流程",
-        "title":u"次卡消费 - 微生活POS系统"
+        "phoneOrCard":"1213058035164514",
+        "desc": "次卡消费撤销正常流程",
+        "title":"次卡消费流水 - 微生活POS系统"
     }
 ]
 
@@ -27,7 +26,7 @@ class TestNumberCardListPage(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.driver = select_Browser_WebDriver()
-        cls.url = getBaseUrl('POS_URL') +'/numbercard/list'
+        cls.url = join_url('/numbercard/list')
 
 
 
@@ -37,7 +36,7 @@ class TestNumberCardListPage(unittest.TestCase):
     @replayCaseFail(num=3)
     def testCase1(self,data):
         """次卡消费撤销"""
-        print '功能:{0}'.format(data['desc'])
+        print('功能:{0}'.format(data['desc']))
 
         #实例化NumberCardListPage类
         self.list = NumberCardListPage(self.url,self.driver,data['title'])
@@ -70,9 +69,9 @@ if __name__=="__main__":
     tests = [unittest.TestLoader().loadTestsFromTestCase(TestNumberCardListPage)]
     suite.addTests(tests)
     filePath = os.path.join(gl.reportPath, 'Report.html')  # 确定生成报告的路径
-    print filePath
+    print(filePath)
 
-    with file(filePath, 'wb') as fp:
+    with open(filePath, 'wb') as fp:
         runner = HTMLTESTRunnerCN.HTMLTestRunner(
             stream=fp,
             title=u'UI自动化测试报告',

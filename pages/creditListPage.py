@@ -1,7 +1,7 @@
 #coding:utf-8
-from pos.base import basepage
+from base import basepage
 from selenium.webdriver.common.by import By
-import time,os
+
 
 class CreditListPage(basepage.BasePage):
     """交易流水模块"""
@@ -19,23 +19,23 @@ class CreditListPage(basepage.BasePage):
     @property
     def clickUndoLink(self):
         """单击撤销积分"""
-        self.clickBtn('撤销积分',*(self.undo_LinkBtn_loc))
+        self.click_button('撤销积分',*(self.undo_LinkBtn_loc))
 
     @property
     def clickUndoLinkText(self):
         """单击撤销积分文本"""
-        self.clickBtn('撤销积分',*(self.unodo_LinkBtnText_loc))
+        self.click_button('撤销积分',*(self.unodo_LinkBtnText_loc))
 
 
     @property
     def clickUndoBtn(self):
         """单击撤销积分确定按钮"""
-        self.clickBtn('确定',*(self.undo_Btn_loc))
+        self.click_button('确定',*(self.undo_Btn_loc))
 
 
     @property
     def assertUndoSuccess(self):
         """断言,撤销成功"""
         txt = self.getTagText('text',*(self.undo_assertList_loc))
-        self.getImage
+        self.getImage()
         return txt

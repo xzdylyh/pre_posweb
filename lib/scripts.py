@@ -1,6 +1,10 @@
 #_*_coding:utf-8_*_
-import time,os,zipfile
-import yaml,json
+import time
+import os
+import shutil
+from functools import wraps
+import zipfile
+import yaml
 from lib import gl
 from selenium import webdriver
 
@@ -59,6 +63,16 @@ def getBaseUrl(key):
     config = getYamlfield(gl.configFile)
     return config['BASE_URL'][key]
 
+def join_url(surl, key='POS_URL'):
+    """
+    拼接完整url并返回
+    :param surl:
+    :param key:
+    :return:
+    """
+    url = '{}{}'.format(getBaseUrl(key), surl)
+    return url
+
 
 
 """获取执行标记"""
@@ -90,12 +104,13 @@ def Replay(func):
     :param func: 函数名
     :return: wrapper
     """
+    @wraps(func)
     def wrapper(*args,**kwargs):
-        func(*args,**kwargs)
+        ret = func(*args,**kwargs)
         yamldict = getYamlfield(os.path.join(gl.configPath, 'config.yaml'))
         sleepTime = float(yamldict['RUNING']['REPLAY']['Time']) / 1000
         time.sleep(sleepTime)
-        return func
+        return ret
     return wrapper
 
 
@@ -107,6 +122,7 @@ def hightlightConfig(key):
     :return:
     """
     def _wrapper(func):
+        @wraps(func)
         def wrapper(*args,**kwargs):
             config = getYamlfield(gl.configFile)
             ret = None
@@ -118,20 +134,18 @@ def hightlightConfig(key):
 
 
 
-def rmDirsAndFiles(dirpath):
+def rm_dirs(dirpath):
     """
     删除目标,目录下文件及文件夹
     :param dirpath: 目标目录
     :return: 无
     """
-    listdir = os.listdir(dirpath)
-    if listdir:
-        for f in listdir:
-            filepath = os.path.join(dirpath,f)
-            if os.path.isfile(filepath):
-                os.remove(filepath)
-            if os.path.isdir(filepath):
-                os.rmdir(filepath)
+    #如果路径存在则删除
+    if os.path.exists(dirpath):
+        #删除文件夹及其下所有文件
+        shutil.rmtree(dirpath)
+    else:
+        None
 
 
 def zipDir(dirpath,outFullName):
@@ -158,6 +172,7 @@ def replayCaseFail(num=3):
     :return: fun本身或者抛出异常
     """
     def _warpper(func):
+        @wraps(func)
         def warpper(*args,**kwargs):
             raise_info = None
             rnum = 0

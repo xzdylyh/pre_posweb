@@ -1,9 +1,6 @@
 #coding=utf-8
-from pos.base import basepage
+from base import basepage
 from selenium.webdriver.common.by import By
-from pos.lib import scripts,gl
-import time,os
-
 
 class ChargePage(basepage.BasePage):
     '''储值模块'''
@@ -11,19 +8,18 @@ class ChargePage(basepage.BasePage):
     # 手机号或卡号
     charge_number_loc = (By.ID,'charge_number')
     # 确定按钮
-    charge_confirmBtn_loc = (By.XPATH,'/html/body/div[1]/div/div/div/div[2]/div[1]/div/div/button')
+    charge_confirmBtn_loc = (By.XPATH,'//input[@id="charge_number"]/../div[1]/button[1]')
 
-    # 储值奖历规则
-    charge_GZ_loc = (By.XPATH,'/html/body/div[2]/div/div/div/div[2]/div/div[2]/div/div[1]/p[2]')
+    # 储值奖历规则 送1元
+    charge_GZ_loc = (By.XPATH,'//input[@name="tcAwards"]/../div[1]/p[2]')
     # 自定义储值规则
-    charge_customGZ_loc = (By.XPATH,'/html/body/div[2]/div/div/div/div[2]/div/div[2]/div/a')
+    charge_customGZ_loc = (By.LINK_TEXT, "自定义规则")
     # 自定义输入金额
     charge_present_loc = (By.ID,'present')
     # 确定按钮
-    charge_customBtn_loc = (By.XPATH,'/html/body/div[2]/div/div/div/div[2]/div/div[2]/div/div[5]/div[1]/div/div/button')
-
+    charge_customBtn_loc = (By.XPATH,'//input[@id="present"]/../div[1]/button[1]')
     # 支付类型
-    charge_payType_loc =(By.XPATH,'/html/body/div[2]/div/div/div/div[2]/div/div[4]/div/div[1]/div/label[1]')
+    charge_payType_loc =(By.XPATH,'//input[@name="payType"]/..')
     # 备注
     charge_Remark_loc = (By.ID,'note')
     # 储值提交确定按钮
@@ -39,6 +35,11 @@ class ChargePage(basepage.BasePage):
     charge_consumeBtn_loc = (By.ID,'consumeBtn')
     # 储值余额
     usSaving_loc = (By.ID,'usSaving')
+    #积分
+    ownCredit_loc = (By.ID, "ownCredit")
+    #自定义金额与储值规则相同时错误提示
+    assert_error_loc = (By.XPATH, "//div[@id='sGift']/../label")
+
 
     #-------------------------------------补开发票--------------------------------------
     # 补开发票
@@ -61,18 +62,18 @@ class ChargePage(basepage.BasePage):
     @property
     def clickConfirmBtn(self):
         """单击 确定按钮，显示储值信息"""
-        self.clickBtn('确定',*(self.charge_confirmBtn_loc))
+        self.click_button('确定',*(self.charge_confirmBtn_loc))
 
     @property
     def clickChargeGZ(self):
         """单击储值奖励规则"""
-        self.clickBtn('奖励规则',*(self.charge_GZ_loc))
+        self.click_button('奖励规则',*(self.charge_GZ_loc))
 
 
     @property
     def clickCustomGZ(self):
         """单击 自定义规则链接"""
-        self.clickBtn('自定义规则',*(self.charge_customGZ_loc))
+        self.click_button('自定义规则',*(self.charge_customGZ_loc))
 
     def inputCustomPresent(self,text):
         """输入自定义金额"""
@@ -81,12 +82,16 @@ class ChargePage(basepage.BasePage):
     @property
     def clickCustomConfirmBtn(self):
         """单击自定义规则确定按钮"""
-        self.clickBtn('自定义规则确定',*(self.charge_customBtn_loc))
+        self.click_button('自定义规则确定',*(self.charge_customBtn_loc))
 
-    @property
-    def clickPayType(self):
+
+    def clickPayType(self, index):
         """单击支付类型，现金"""
-        self.clickBtn('现金支付类型',*(self.charge_payType_loc))
+        self.click_btn_index(
+            '现金支付类型',
+            index,
+            *(self.charge_payType_loc)
+        )
 
 
     def inputRemark(self,text):
@@ -96,32 +101,32 @@ class ChargePage(basepage.BasePage):
     @property
     def clickSubmitBtn(self):
         """单击 确定按钮提交"""
-        self.clickBtn('确定',*(self.charge_submit_loc))
+        self.click_button('确定',*(self.charge_submit_loc))
 
 
 
     @property
     def clickLastConfirmBtn(self):
         """单击 最后确认储值按钮"""
-        self.clickBtn('确定',*(self.charge_LastBtn_loc))
+        self.click_button('确定',*(self.charge_LastBtn_loc))
 
 
     @property
     def clickConsumeBtn(self):
         """单击 立即消费按钮"""
-        self.clickBtn('立即消费',*(self.charge_consumeBtn_loc))
+        self.click_button('立即消费',*(self.charge_consumeBtn_loc))
 
 
     @property
     def clickFillReceipt(self):
         """单击 补开发票按钮"""
-        self.clickBtn('补开发票',*(self.fill_toReceipt_loc))
+        self.click_button('补开发票',*(self.fill_toReceipt_loc))
 
 
     @property
     def clickFillConfirmBtn(self):
         """单击 发票确认按钮"""
-        self.clickBtn('确定',*(self.fill_Btn_loc))
+        self.click_button('确定',*(self.fill_Btn_loc))
 
 
     def inputFillPresent(self,text):
@@ -157,7 +162,7 @@ class ChargePage(basepage.BasePage):
         # 未开票金额
         notFill = self.getTagText(
             txtName,*(self.fill_not_RMB_loc)).encode('utf-8')
-        self.getImage
+        self.getImage()
         return notFill
 
 
@@ -165,7 +170,7 @@ class ChargePage(basepage.BasePage):
     def assertCustom(self):
         '''断言进入消费页面'''
         bool_var = self.isExist(*(self.assertPhone))
-        self.getImage
+        self.getImage()
         return bool_var
 
 
@@ -173,10 +178,16 @@ class ChargePage(basepage.BasePage):
     def assertChargeSuccess(self):
         '''断言支付成功'''
         bool_var = self.isExist(*(self.assertChargeSuccess_loc))
-        self.getImage
+        self.getImage()
         return bool_var
 
 
+    def assert_custom_error(self):
+        """断言自定义储值规则与储值规则金额相同时错误提示"""
+        bool_var = self.isExist(*(self.assert_error_loc))
+
+        self.getImage()
+        return bool_var
 
 
 

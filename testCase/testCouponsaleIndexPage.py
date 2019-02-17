@@ -1,18 +1,18 @@
 #coding=utf-8
-from pos.pages.couponsaleIndexPage import CouponsaleIndexPage
+from pages.couponsaleIndexPage import CouponsaleIndexPage
 import unittest,ddt,os
-from pos.lib.scripts import (
+from lib.scripts import (
     getYamlfield,
     getRunFlag,
     select_Browser_WebDriver,
     replayCaseFail,
     getBaseUrl
 )
-from pos.lib import gl,HTMLTESTRunnerCN
+from lib import gl,HTMLTESTRunnerCN
 
 shopData = [
     {
-        "phoneOrCard":"1802326514043775",
+        "phoneOrCard":"1213058731956726",
         "iterInput":[1,1],
         "desc":u"券包+次卡+直接购买",
         "title":u"商品售卖 - 微生活POS系统",
@@ -35,7 +35,7 @@ class TestCouponsaleIndexPage(unittest.TestCase):
     @replayCaseFail(num=3)
     def testCase1(self,data):
         """商品售卖-券包+次卡+直接购买"""
-        print '功能:{0}'.format(data['desc'])
+        print('功能:{0}'.format(data['desc']))
 
         #实例化CouponsaleIndexPage类
         self.shop = CouponsaleIndexPage(self.url,self.driver,data['title'])
@@ -79,9 +79,9 @@ if __name__=="__main__":
     tests = [unittest.TestLoader().loadTestsFromTestCase(TestCouponsaleIndexPage)]
     suite.addTests(tests)
     filePath = os.path.join(gl.reportPath, 'Report.html')  # 确定生成报告的路径
-    print filePath
+    print(filePath)
 
-    with file(filePath, 'wb') as fp:
+    with open(filePath, 'wb') as fp:
         runner = HTMLTESTRunnerCN.HTMLTestRunner(
             stream=fp,
             title=u'UI自动化测试报告',

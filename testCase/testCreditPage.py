@@ -1,22 +1,21 @@
 #coding=utf-8
-from selenium.webdriver.common.by import By
-from pos.pages.creditPage import CreditPage
-from pos.lib.scripts import (
+from pages.creditPage import CreditPage
+from lib.scripts import (
     getYamlfield,
     getRunFlag,
     select_Browser_WebDriver,
     replayCaseFail,
-    getBaseUrl
+    join_url
 )
 import unittest,ddt,os
-from pos.lib import gl,HTMLTESTRunnerCN
+from lib import gl,HTMLTESTRunnerCN
 
 creditData = [
     {
-        "charge_number":"1802326514043775",
+        "charge_number":"1213058662866084",
         "ExchangeNumber":1,
-        "ExchangeDetail":u"自动化测试大礼包1个",
-        "desc":u"正常积分兑换流程"
+        "ExchangeDetail":"自动化测试大礼包1个",
+        "desc": "正常积分兑换流程"
     }
 ]
 
@@ -27,7 +26,7 @@ class TestCreditPage(unittest.TestCase):
     def setUpClass(cls):
         """初始化webdriver"""
         cls.driver = select_Browser_WebDriver()
-        cls.url = getBaseUrl('POS_URL') +'/credit'
+        cls.url = join_url('/credit')
 
 
     def creditFunc(self,data):
@@ -47,7 +46,7 @@ class TestCreditPage(unittest.TestCase):
     @replayCaseFail(num=3)
     def testCase1(self,data):
         '''积分换礼'''
-        print '{0}'.format(data['desc'])
+        print('{0}'.format(data['desc']))
 
         # 输入手机号,或卡号,进入积分换礼页面
         self.creditFunc(data)
@@ -78,9 +77,9 @@ if __name__=="__main__":
     tests = [unittest.TestLoader().loadTestsFromTestCase(TestCreditPage)]
     suite.addTests(tests)
     filePath = os.path.join(gl.reportPath, 'Report.html')  # 确定生成报告的路径
-    print filePath
+    print(filePath)
 
-    with file(filePath, 'wb') as fp:
+    with open(filePath, 'wb') as fp:
         runner = HTMLTESTRunnerCN.HTMLTestRunner(
             stream=fp,
             title=u'UI自动化测试报告',

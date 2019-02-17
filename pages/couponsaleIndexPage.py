@@ -1,5 +1,5 @@
 #coding=utf-8
-from pos.base import basepage
+from base import basepage
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 import time,os
@@ -34,7 +34,7 @@ class CouponsaleIndexPage(basepage.BasePage):
     @property
     def clickConfirmBtn(self):
         """单击 确定按钮，进入商品售卖页面"""
-        self.clickBtn('确定',*(self.shop_phoneBtn_loc))
+        self.click_button('确定',*(self.shop_phoneBtn_loc))
 
     @property
     def clickiterSelect(self):
@@ -48,7 +48,7 @@ class CouponsaleIndexPage(basepage.BasePage):
     @property
     def clickShopConfirmBtn(self):
         """点击 确定按钮，提交售卖"""
-        self.clickBtn('确定',*(self.shop_confirmBtn_loc))
+        self.click_button('确定',*(self.shop_confirmBtn_loc))
 
 
     def inputPaypwd(self,text):
@@ -64,8 +64,8 @@ class CouponsaleIndexPage(basepage.BasePage):
     def assertShopSuccess(self):
         '''断言售卖成功'''
         bool_var = self.isExist(*(self.shop_phone_loc))
-        print '返回到输入卡号界面?{0}'.format(bool_var)
-        self.getImage
+        print ('返回到输入卡号界面?{0}'.format(bool_var))
+        self.getImage()
         return bool_var
 
 

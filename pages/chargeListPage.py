@@ -2,7 +2,7 @@
 import time,os
 
 from selenium.webdriver.common.by import By
-from pos.base import basepage
+from base import basepage
 
 
 
@@ -23,38 +23,38 @@ class ChargeListPage(basepage.BasePage):
     @property
     def clickUndoLinkText(self):
         """单击 充值撤销链接"""
-        self.clickBtn('撤销充值',*(self.charge_undoLinkText_loc))
+        self.click_button('撤销充值',*(self.charge_undoLinkText_loc))
 
 
     @property
     def clickUndoLink(self):
         """单击 充值撤销链接"""
-        self.clickBtn('储值撤销',*(self.charge_undoLink_loc))
+        self.click_button('储值撤销',*(self.charge_undoLink_loc))
 
     @property
     def clickConfirmBtn(self):
         """单击 确定按钮"""
-        self.clickBtn('确定',*(self.charge_confirmBtn_loc))
+        self.click_button('确定',*(self.charge_confirmBtn_loc))
 
 
     @property
     def getChargeStatusTxt(self):
         """获取 储值状态文本"""
         txt=self.find_element(*(self.charge_undoStatus_loc)).text
-        self.getImage
+        self.getImage()
         return txt
 
     @property
     def assertCustom(self):
         '''断言进入消费页面'''
         bool_var = self.isExist(*(self.assertPhone))
-        self.getImage
+        self.getImage()
         return bool_var
 
     @property
     def assertUndoSuccess(self):
         '''断言支付成功'''
-        self.getImage
+        self.getImage()
         #return self.isExist(*(self.charge_undoSuccess_loc))
 
 

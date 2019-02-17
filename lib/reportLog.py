@@ -2,7 +2,7 @@
 
 import xml.dom.minidom as xmlDoc
 import os
-import gl
+import lib.gl
 import sys
 import time
 
@@ -34,8 +34,8 @@ class cREPORTXML(object):
             returnResult.append(report)
             returnResult.append(overStatus)
 
-        except Exception,ex:
-            return ex.message
+        except Exception as ex:
+            return ex
         return returnResult
         '''
             def writeOverStatus(self,overStatus = 'PASSED'):

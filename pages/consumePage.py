@@ -1,6 +1,5 @@
-#coding:utf-8
-import time,os
-from pos.base import basepage
+
+from base import basepage
 from selenium.webdriver.common.by import By
 
 
@@ -100,19 +99,19 @@ class ConsumePage(basepage.BasePage):
     @property
     def clickVerCodeConfirmBtn(self):
         """单击验证码确定按钮"""
-        self.clickBtn('确定',*(self.codeBtn_loc))
+        self.click_button('确定',*(self.codeBtn_loc))
 
 
     @property
     def clearInputStoredPay(self):
         """清除储值支付框的值"""
-        self.clearInputText(*(self.tcStoredPay_loc))
+        self.clearInputText('清除储值支付金额', *(self.tcStoredPay_loc))
 
 
     @property
     def clickBindCardIco(self):
         """单击 绑卡图标，进入绑卡页面"""
-        self.clickBtn('绑卡图标',*(self.cardBindIco_loc))
+        self.click_button('绑卡图标',*(self.cardBindIco_loc))
 
 
     def inputBindCardNo(self,text):
@@ -123,18 +122,18 @@ class ConsumePage(basepage.BasePage):
     @property
     def clickBindConfirmBtn(self):
         """绑卡确定按钮"""
-        self.clickBtn('确定',*(self.cardBindBtn_loc))
+        self.click_button('确定',*(self.cardBindBtn_loc))
 
     @property
     def clickBindSubmit(self):
         """绑卡再次确定按钮"""
-        self.clickBtn('确认',*(self.cardofBtn_loc))
+        self.click_button('确认',*(self.cardofBtn_loc))
 
 
     @property
     def selectCardNoTab(self):
         """选择卡号或手机号tab"""
-        self.clickBtn('手机号或卡号TAB',*(self.consume_cardOrPhoneTab_loc))
+        self.click_button('手机号或卡号TAB',*(self.consume_cardOrPhoneTab_loc))
 
 
     def inputPhoneOrCardNo(self,text):
@@ -144,7 +143,7 @@ class ConsumePage(basepage.BasePage):
     @property
     def clickConfirmBtn(self):
         """单击确定按钮进入消费页"""
-        self.clickBtn('确定',*(self.consume_confirmBtn_loc))
+        self.click_button('确定',*(self.consume_confirmBtn_loc))
 
 
     def inputTotalFee(self,text):
@@ -169,19 +168,19 @@ class ConsumePage(basepage.BasePage):
     @property
     def clickConsumeSubmitBtn(self):
         """单击消费确定提交"""
-        self.clickBtn('确定',*(self.tcShowSubmit_loc))
+        self.click_button('确定',*(self.tcShowSubmit_loc))
 
 
     @property
     def clickConsumeConfirmBtn(self):
         """单击消费确定按钮"""
-        self.clickBtn('确定',*(self.tcConfirm_consumeBtn_loc))
+        self.click_button('确定',*(self.tcConfirm_consumeBtn_loc))
 
 
     @property
     def clickCardPayType(self):
         """单击 银行卡支付方式"""
-        self.clickBtn('银行卡',*(self.pay_loc))
+        self.click_button('银行卡',*(self.pay_loc))
 
 
     def inputPaypwd(self,text):
@@ -197,7 +196,7 @@ class ConsumePage(basepage.BasePage):
     @property
     def clickOpenCardIco(self):
         """单击 开卡图标，进行开卡"""
-        self.clickBtn('开卡图标',*(self.openCard_loc))
+        self.click_button('开卡图标',*(self.openCard_loc))
 
     def inputOpenCardPhone(self,text):
         """输入开卡手机号"""
@@ -212,7 +211,7 @@ class ConsumePage(basepage.BasePage):
     @property
     def clickOpenCardSex(self):
         """单击 开卡人性别"""
-        self.clickBtn('性别',*(self.open_sex_loc))
+        self.click_button('性别',*(self.open_sex_loc))
 
 
     def inputOpenCardBirthday(self,text):
@@ -228,13 +227,13 @@ class ConsumePage(basepage.BasePage):
     @property
     def clickOpenConfirmBtn(self):
         """单击确定按钮"""
-        self.clickBtn('确定',*(self.open_cardConfirmBtn_loc))
+        self.click_button('确定',*(self.open_cardConfirmBtn_loc))
 
 
     @property
     def clickCardOfOpenBtn(self):
         """不记名卡开卡页面确定按钮"""
-        self.clickBtn('确定',*(self.cardOfOpenBtn_loc))
+        self.click_button('确定',*(self.cardOfOpenBtn_loc))
 
 
 
@@ -242,14 +241,14 @@ class ConsumePage(basepage.BasePage):
     def assertCustom(self):
         '''断言进入消费页面'''
         bool_var = self.isExist(*(self.assertPhone))
-        self.getImage
+        self.getImage()
         return bool_var
 
     @property
     def assertPaySuccess(self):
         '''断言支付成功'''
         bool_var = self.isExist(*(self.consume_CardorPhone_loc))
-        self.getImage
+        self.getImage()
         return bool_var
 
 
@@ -257,12 +256,12 @@ class ConsumePage(basepage.BasePage):
     def assertCardSuccess(self):
         '''断言支付成功'''
         bool_var = self.isExist(*(self.open_CardSuccess_loc))
-        self.getImage
+        self.getImage()
         return bool_var
 
     @property
     def assertOpenCardSuccess(self):
         """断言次卡开卡成功"""
         bool_var = self.isExist(*(self.cardNumber_loc))
-        self.getImage
+        self.getImage()
         return bool_var

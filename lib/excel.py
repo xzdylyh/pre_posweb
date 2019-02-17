@@ -21,16 +21,16 @@ class Excel(object):
             ret = excel.open_workbook(filename=self.excelPath)
             #data = excel.open_workbook(filename=self.excelPath)
             return  ret
-        except Exception,ex:
-            print str(ex)
+        except Exception as ex:
+            print(str(ex))
 
     #获取指定行数据,返回数组
     def getRowData(self,rownum =0):
         try:
             data = self.OpenExcel(self.excelPath)
             table = data.sheet_by_index(0)
-        except Exception,ex:
-            return ex.message()
+        except Exception as ex:
+            return ex
         return table.row_values(rownum)
 
 
@@ -97,4 +97,4 @@ class Excel(object):
 if __name__=="__main__":
     excelPath = os.path.join(gl.dataPath, 'posChargeCard.xls').decode('utf-8')
     a =  Excel(excelPath).getCardNo(cell_col=0,cell_valueType=1)
-    print int(float(a))
+    print(int(float(a)))

@@ -25,9 +25,8 @@ class EmailClass(object):
     '''
     配置邮件内容
     '''
-    @property
-    def setMailContent(self):
-        print self.receivers
+    def setMailContent(self, reportHtml):
+        print (self.receivers)
         msg = MIMEMultipart()
         msg['From'] = Header(self.From,'utf-8')
         msg['To'] = self.To
@@ -36,7 +35,7 @@ class EmailClass(object):
         #附件路径
         dirpath = gl.reportPath
         zipfile = os.path.join(os.path.dirname(dirpath), 'report.zip')
-        reportfile = os.path.join(gl.reportPath, 'Report.html')
+        reportfile = reportHtml
         scripts.zipDir(dirpath,zipfile) #压缩报告
         #增加邮件内容为html
         fp = open(reportfile, 'rb')
@@ -74,15 +73,14 @@ class EmailClass(object):
             smtpObj.login(self.sender,self.config['EMAIL']['Password'])
             smtpObj.sendmail(self.sender,self.receivers , message.as_string())
             smtpObj.quit()
-            print "邮件发送成功"
+            print("邮件发送成功")
         except smtplib.SMTPException as ex:
-            print "Error: 无法发送邮件.%s"%ex
+            print("Error: 无法发送邮件.%s"%ex)
 
     #发送调用
-    @property
-    def send(self):
-        self.sendEmail(self.setMailContent)
+    def send(self, reportfile):
+        self.sendEmail(self.setMailContent(reportfile))
 
 if __name__=="__main__":
-    EmailClass().send
+    EmailClass().send('')
 

@@ -1,5 +1,5 @@
 #coding:utf-8
-from pos.base import basepage
+from base import basepage
 from selenium.webdriver.common.by import By
 import time,os
 
@@ -18,13 +18,13 @@ class NumberCardListPage(basepage.BasePage):
     @property
     def clickUndoLink(self):
         """单击撤销链接"""
-        self.clickBtn('消费撤销',*(self.list_undoLink_loc))
+        self.click_button('消费撤销',*(self.list_undoLink_loc))
 
 
     @property
     def clickConfirmButton(self):
         """单击确定按钮"""
-        self.clickBtn('确定',*(self.list_confirmBtn_loc))
+        self.click_button('确定',*(self.list_confirmBtn_loc))
 
 
     @property
@@ -36,7 +36,7 @@ class NumberCardListPage(basepage.BasePage):
     @property
     def assertSuccess(self):
         """断言,撤销消费成功"""
-        print '断言:交易流水,新增一条,交易类型为撤销消费的记录'
+        print('断言:交易流水,新增一条,交易类型为撤销消费的记录')
         bool_var =self.isOrNoExist(*(self.list_assert_loc))
-        self.getImage
+        self.getImage()
         return bool_var

@@ -1,7 +1,7 @@
 #coding:utf-8
-import time,os
+
 from selenium.webdriver.common.by import By
-from pos.base import basepage
+from base import basepage
 
 
 
@@ -9,7 +9,7 @@ class ConsumeListPage(basepage.BasePage):
     """交易流水模块"""
     #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<定位器>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     # 撤销消费链接
-    undo_deal_loc = (By.XPATH,'//*[@id="consumeRunWater"]/table/tbody/tr[1]/td[21]/span')
+    # undo_deal_loc = (By.XPATH,'//*[@id="consumeRunWater"]/table/tbody/tr[1]/td[21]/span')
     undo_dealText_loc =(By.LINK_TEXT,'撤销消费')
     # 确定按钮
     undo_dealBtn_loc = (By.ID,'undo')
@@ -28,17 +28,17 @@ class ConsumeListPage(basepage.BasePage):
     def clickUndoLinkText(self):
         """单击 撤销消费 链接文本"""
         # 单击撤销消费之前，点一下父元素，来解决决定位到，点击无效
-        self.clickBtn('撤销消费',*(self.undo_dealText_loc))
+        self.click_button('撤销消费',*(self.undo_dealText_loc))
 
     @property
     def clickUndoLink(self):
         """单击 撤消消费 链接"""
-        self.clickBtn('撤销消费',*(self.undo_deal_loc))
+        self.click_button('撤销消费',*(self.undo_deal_loc))
 
     @property
     def clickConfirmBtn(self):
         """单击 确定按钮"""
-        self.clickBtn('确定',*(self.undo_dealBtn_loc))
+        self.click_button('确定',*(self.undo_dealBtn_loc))
 
     @property
     def getContentText(self):
@@ -50,5 +50,5 @@ class ConsumeListPage(basepage.BasePage):
     def assertCancelSuccess(self):
         """断言,撤销成功"""
         bool_var = self.isOrNoExist(*(self.undo_assert_loc))
-        self.getImage
+        self.getImage()
         return bool_var

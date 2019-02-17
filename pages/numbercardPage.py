@@ -1,5 +1,5 @@
 #coding:utf-8
-from pos.base import basepage
+from base import basepage
 from selenium.webdriver.common.by import By
 import time,os
 
@@ -25,7 +25,7 @@ class NumberCardPage(basepage.BasePage):
     @property
     def clickNumberCardButton(self):
         """单击 确定按钮"""
-        self.clickBtn('确定',*(self.number_conrimBtn_loc))
+        self.click_button('确定',*(self.number_conrimBtn_loc))
 
 
     def inputNumberUse(self,text):
@@ -40,13 +40,13 @@ class NumberCardPage(basepage.BasePage):
     @property
     def clickSubmitButton(self):
         """单击 确定按钮，提交"""
-        self.clickBtn('确定',*(self.number_submit_loc))
+        self.click_button('确定',*(self.number_submit_loc))
 
 
     @property
     def assertSuccess(self):
         """断言,消费成功"""
-        print '断言:返回到次卡消费初始页'
+        print('断言:返回到次卡消费初始页')
         bool_var = self.isOrNoExist(*(self.number_phone_Loc))
-        self.getImage
+        self.getImage()
         return bool_var

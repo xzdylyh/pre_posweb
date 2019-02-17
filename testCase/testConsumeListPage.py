@@ -1,16 +1,22 @@
 #coding=utf-8
-from pos.pages.consumeListPage import ConsumeListPage
+from pages.consumeListPage import ConsumeListPage
 import unittest,ddt,os
-from pos.lib.scripts import (
+from lib.scripts import (
     getRunFlag,
     select_Browser_WebDriver,
     replayCaseFail,
-    getBaseUrl
+    join_url
 )
-from pos.lib import gl,HTMLTESTRunnerCN
+from lib import gl,HTMLTESTRunnerCN
 
 
-consumeData = [{"consumeListTitle": "消费流水 - 微生活POS系统","desc":u"撤销消费正常流程"}]
+#撤销消费
+consumeData = [
+    {
+        "consumeListTitle": "消费流水 - 微生活POS系统", #标题
+        "desc": "撤销消费正常流程" #用例描述
+    }
+]
 
 
 @ddt.ddt
@@ -19,7 +25,7 @@ class TestConsumeListPage(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.driver = select_Browser_WebDriver()
-        cls.url = getBaseUrl('POS_URL') +'/consume/list'
+        cls.url = join_url('/consume/list')
 
 
     @unittest.skipIf(getRunFlag('CONSUMELIST', 'testCase1') == 'N', '验证执行配置')
@@ -27,7 +33,7 @@ class TestConsumeListPage(unittest.TestCase):
     @replayCaseFail(num=3)
     def testCase1(self,data):
         """交易流水-撤销消费"""
-        print '功能:{0}'.format(data['desc'])
+        print('功能:{0}'.format(data['desc']))
 
         #实例化ConsumeListPage类
         self.consumeList = ConsumeListPage(self.url,self.driver,data['consumeListTitle'])
@@ -51,7 +57,7 @@ class TestConsumeListPage(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         cls.driver.quit()
-
+        # pass
 
 
 
@@ -62,9 +68,9 @@ if __name__=="__main__":
     tests = [unittest.TestLoader().loadTestsFromTestCase(TestConsumeListPage)]
     suite.addTests(tests)
     filePath = os.path.join(gl.reportPath, 'Report.html')  # 确定生成报告的路径
-    print filePath
+    print(filePath)
 
-    with file(filePath, 'wb') as fp:
+    with open(filePath, 'wb') as fp:
         runner = HTMLTESTRunnerCN.HTMLTestRunner(
             stream=fp,
             title=u'UI自动化测试报告',

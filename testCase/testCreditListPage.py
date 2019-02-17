@@ -1,14 +1,14 @@
 # coding=utf-8
-from pos.pages.creditListPage import CreditListPage
+from pages.creditListPage import CreditListPage
 import unittest, ddt, os
 
-from pos.lib.scripts import (
+from lib.scripts import (
     getRunFlag,
     getBaseUrl,
     select_Browser_WebDriver,
     replayCaseFail
 )
-from pos.lib import gl, HTMLTESTRunnerCN
+from lib import gl, HTMLTESTRunnerCN
 
 
 creditData = [
@@ -33,7 +33,7 @@ class TestCreditListPage(unittest.TestCase):
     @replayCaseFail(num=3)
     def testCase1(self, data):
         """交易流水-撤销积分"""
-        print '功能:{0}'.format(data['desc'])
+        print('功能:{0}'.format(data['desc']))
 
         #实例化CreditListPage类
         self.creditList = CreditListPage(self.url,self.driver,data['CreditListTitle'])
@@ -65,9 +65,9 @@ if __name__ == "__main__":
     tests = [unittest.TestLoader().loadTestsFromTestCase(TestCreditListPage)]
     suite.addTests(tests)
     filePath = os.path.join(gl.reportPath, 'Report.html')  # 确定生成报告的路径
-    print filePath
+    print(filePath)
 
-    with file(filePath, 'wb') as fp:
+    with open(filePath, 'wb') as fp:
         runner = HTMLTESTRunnerCN.HTMLTestRunner(
             stream=fp,
             title=u'UI自动化测试报告',

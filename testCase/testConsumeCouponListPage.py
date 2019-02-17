@@ -1,18 +1,18 @@
 #coding=utf-8
-from pos.pages.consumeCouponListPage import  ConsumeCouponListPage
+from pages.consumeCouponListPage import  ConsumeCouponListPage
 import unittest,ddt,os
-from pos.lib.scripts import (
+from lib.scripts import (
     getRunFlag,
     select_Browser_WebDriver,
     replayCaseFail,
-    getBaseUrl
+    join_url
 )
-from pos.lib import gl,HTMLTESTRunnerCN
+from lib import gl,HTMLTESTRunnerCN
 
 shopCancelData = [
     {
-        "desc":u"券包+次卡+直接购买",
-        "title":u"商品售卖流水 - 微生活POS系统"
+        "desc": "撤销商品售卖(券包+次卡+直接购买)",
+        "title": "商品售卖流水 - 微生活POS系统"
     }
 ]
 
@@ -22,7 +22,7 @@ class TestConsumeCouponListPage(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.driver = select_Browser_WebDriver()
-        cls.url = getBaseUrl('POS_URL') +'/consume/couponlist'
+        cls.url = join_url('/consume/couponlist')
 
 
 
@@ -31,7 +31,7 @@ class TestConsumeCouponListPage(unittest.TestCase):
     @replayCaseFail(num=3)
     def testCase1(self,data):
         """交易流水-撤销商品售卖"""
-        print '功能:{0}'.format(data['desc'])
+        print('功能:{0}'.format(data['desc']))
 
         #实例化ConsumeCouponListPage类
         self.undo = ConsumeCouponListPage(self.url,self.driver,data['title'])
@@ -64,9 +64,9 @@ if __name__=="__main__":
     tests = [unittest.TestLoader().loadTestsFromTestCase(TestConsumeCouponListPage)]
     suite.addTests(tests)
     filePath = os.path.join(gl.reportPath, 'Report.html')  # 确定生成报告的路径
-    print filePath
+    print(filePath)
 
-    with file(filePath, 'wb') as fp:
+    with open(filePath, 'wb') as fp:
         runner = HTMLTESTRunnerCN.HTMLTestRunner(
             stream=fp,
             title=u'UI自动化测试报告',

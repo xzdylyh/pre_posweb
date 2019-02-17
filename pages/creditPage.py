@@ -1,5 +1,5 @@
 #coding:utf-8
-from pos.base import basepage
+from base import basepage
 from selenium.webdriver.common.by import By
 import time,os
 
@@ -14,7 +14,7 @@ class CreditPage(basepage.BasePage):
     # 会员卡号或手机号
     charge_number_loc =(By.ID,'charge_number')
     # 确定按钮
-    creditBtn_loc = (By.XPATH,'/html/body/div[1]/div/div/div/div[2]/div[1]/div/div/button')
+    creditBtn_loc = (By.XPATH,'//input[@id="charge_number"]/../div[1]/button[1]')
 
     #－－－－－－－－－－－换礼页面－－－－－－－－－－－－－－－－－
     # 扣减积分
@@ -45,7 +45,7 @@ class CreditPage(basepage.BasePage):
     @property
     def clickPhoneConfirmBtn(self):
         """单击 确定按钮"""
-        self.clickBtn('确定',*(self.creditBtn_loc))
+        self.click_button('确定',*(self.creditBtn_loc))
 
     def inputExchangeNumber(self,text):
         """输入 扣减积分数"""
@@ -58,12 +58,12 @@ class CreditPage(basepage.BasePage):
     @property
     def clickConfirmBtn(self):
         """单击积分换礼 确定按钮，提交"""
-        self.clickBtn('确定',*(self.sendMessageBtn_loc))
+        self.click_button('确定',*(self.sendMessageBtn_loc))
 
     @property
     def clickExitButton(self):
         """单击 返回按钮"""
-        self.clickBtn('返回',*(self.cancelBtn_loc))
+        self.click_button('返回',*(self.cancelBtn_loc))
 
 
 
@@ -87,7 +87,7 @@ class CreditPage(basepage.BasePage):
         for box in elements:
             i = 1
             if not box.is_selected():
-                print '勾选:{0}{1}'.format(desc,i)
+                print('勾选:{0}{1}'.format(desc,i))
                 box.click()
                 i+=1
 
@@ -96,5 +96,5 @@ class CreditPage(basepage.BasePage):
     def assertPaySuccess(self):
         '''断言支付成功'''
         bool_var = self.isExist(*(self.charge_number_loc))
-        self.getImage
+        self.getImage()
         return bool_var
