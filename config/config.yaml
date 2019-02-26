@@ -1,7 +1,7 @@
 ﻿NAME: 配置信息
 
 BASE_URL:
-    POS_URL: http://pos.pre.acewill.net
+    POS_URL: http:/xxxxxx
 
 #元素高亮显示配置
 HightLight: 1
@@ -29,7 +29,7 @@ CONFIG:
 EMAIL:
     Smtp_Server: smtp.exmail.qq.com
     Smtp_Sender: lengyaohui.bj@acewill.cn
-    Password: YHleng870120!
+    Password: ------
     Msg_Title: 预发布软Pos-UI自动化测试结果
     Receivers: ['lengyaohui@163.com']  #收件人
     #Receivers: ['lengyaohui@163.com','yechangchun.bj@acewill.cn','wangchaoying.bj@acewill.cn','lilong.bj@acewill.cn','wangyan.bj@acewill.cn','cch@acewill.cn','gzx@acewill.cn','huxl@acewill.cn','jtt@acewill.cn','maming@acewill.cn'] #收件人
